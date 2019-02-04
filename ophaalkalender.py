@@ -1,7 +1,7 @@
 """
 Sensor component for waste pickup dates from dutch waste collectors (using the http://www.opzet.nl app)
 Original Author: Pippijn Stortelder
-Current Version: 2.1.2 20190201 - Pippijn Stortelder
+Current Version: 1.0.0 20190204 - Pippijn Stortelder
 """
 
 import logging
