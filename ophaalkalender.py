@@ -1,7 +1,8 @@
 """
 Sensor component for waste pickup dates from dutch waste collectors (using the http://www.opzet.nl app)
 Original Author: Pippijn Stortelder
-Current Version: 1.0.0 20190204 - Pippijn Stortelder
+Current Version: 1.0.1 20190207 - Pippijn Stortelder
+20190207 - Changed Groenafval to GFT
 """
 
 import logging
@@ -16,7 +17,7 @@ from homeassistant.const import (CONF_RESOURCES)
 from homeassistant.util import Throttle
 from homeassistant.helpers.entity import Entity
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -39,7 +40,7 @@ COLLECTOR_URL = {
 }
 
 RENAME_TITLES = {
-    'tuinafval': 'tuinafval',
+    'tuinafval': 'gft',
     'p-k': 'papier',
     'rest': 'restafval',
     'Grof huisvuil': 'grofafval',
