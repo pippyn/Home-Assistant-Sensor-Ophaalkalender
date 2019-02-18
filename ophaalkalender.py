@@ -1,8 +1,9 @@
 """
 Sensor component for waste pickup dates from dutch waste collectors (using the http://www.opzet.nl app)
 Original Author: Pippijn Stortelder
-Current Version: 1.0.1 20190207 - Pippijn Stortelder
+Current Version: 1.0.2 20190218 - Pippijn Stortelder
 20190207 - Changed Groenafval to GFT
+20190218 - Fixed typo
 """
 
 import logging
@@ -17,7 +18,7 @@ from homeassistant.const import (CONF_RESOURCES)
 from homeassistant.util import Throttle
 from homeassistant.helpers.entity import Entity
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -50,7 +51,7 @@ RENAME_TITLES = {
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_RESOURCES, default=[]): cv.ensure_list,
-    vol.Required(CONF_POSTCODE, default='straat'): cv.string,
+    vol.Required(CONF_STREET_NAME, default='straat'): cv.string,
     vol.Required(CONF_POSTCODE, default='1111'): cv.string,
     vol.Required(CONF_STREET_NUMBER, default='1'): cv.string,
     vol.Optional(CONF_DATE_FORMAT, default='%d-%m-%Y'): cv.string,
