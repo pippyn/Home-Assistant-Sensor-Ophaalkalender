@@ -1,9 +1,10 @@
 """
 Sensor component for waste pickup dates from dutch waste collectors (using the http://www.opzet.nl app)
 Original Author: Pippijn Stortelder
-Current Version: 1.0.2 20190218 - Pippijn Stortelder
+Current Version: 1.0.3 20190223 - Pippijn Stortelder
 20190207 - Changed Groenafval to GFT
 20190218 - Fixed typo
+20190223 - Fix for HA 88
 """
 
 import logging
@@ -18,7 +19,7 @@ from homeassistant.const import (CONF_RESOURCES)
 from homeassistant.util import Throttle
 from homeassistant.helpers.entity import Entity
 
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 
 _LOGGER = logging.getLogger(__name__)
 
