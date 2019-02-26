@@ -1,5 +1,5 @@
 """
-Sensor component for waste pickup dates from dutch waste collectors (using the http://www.opzet.nl app)
+Sensor component for waste pickup dates from belgium waste collectors
 Original Author: Pippijn Stortelder
 Current Version: 1.0.3 20190223 - Pippijn Stortelder
 20190207 - Changed Groenafval to GFT
