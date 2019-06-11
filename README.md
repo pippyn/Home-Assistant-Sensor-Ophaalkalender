@@ -4,10 +4,7 @@ Provides Home Assistant sensors for multiple Dutch waste collectors using REST A
 This sensor works with the ophaalkalender.be waste collector.
 
 ### Install:
-#### Home assistant 88 and higher:
-- Copy the ophaalkalender.py file to: [homeassistant]/config/custom_components/ophaalkalender/sensor.py
-#### Before Home assistant 88:
-- Copy the ophaalkalender.py file to: [homeassistant]/config/custom_components/sensor/ophaalkalender.py
+Copy the files in the /custom_components/ophaalkalender/ folder to: [homeassistant]/config/custom_components/ophaalkalender/
 
 Example config:
 
@@ -76,12 +73,4 @@ custom_updater:
     - components
   component_urls:
     - https://raw.githubusercontent.com/pippyn/Home-Assistant-Sensor-Afvalbeheer/master/custom_components.json
-```
-Before Home assistant 88:
-```yaml
-custom_updater:
-  track:
-    - components
-  component_urls:
-    - https://raw.githubusercontent.com/pippyn/Home-Assistant-Sensor-Afvalbeheer/master/custom_components_old.json
 ```
