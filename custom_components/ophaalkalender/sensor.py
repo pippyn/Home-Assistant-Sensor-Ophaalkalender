@@ -48,7 +48,10 @@ RENAME_TITLES = {
     'tuinafval': 'gft',
     'p-k': 'papier',
     'rest': 'restafval',
-    'Grof huisvuil': 'grofafval',
+    'grof huisvuil': 'grofafval',
+    'grof huisvuil afroep': 'grofafval',
+    'gemengde plastics': 'plastic',
+    'pmd': 'pmd',
 }
 
 # COLLECTOR_WASTE_ID = {}
