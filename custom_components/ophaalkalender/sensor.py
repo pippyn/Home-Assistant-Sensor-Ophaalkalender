@@ -40,6 +40,7 @@ ATTR_WASTE_COLLECTOR = 'wastecollector'
 ATTR_FRACTION_ID = 'ID'
 ATTR_LAST_UPDATE = 'Last update'
 ATTR_HIDDEN = 'Hidden'
+ATTR_DAYS_UNTIL = 'days_until'
 
 COLLECTOR_URL = {
     'ophaalkalender': 'https://www.ophaalkalender.be',
@@ -157,6 +158,7 @@ class WasteSensor(Entity):
         self.waste_collector = waste_collector
         self.date_format = date_format
         self.date_only = date_only
+        self.days_until = None
         self._name = waste_collector + ' ' + self.type
         self._unit = ''
         self._hidden = False
@@ -181,7 +183,8 @@ class WasteSensor(Entity):
         return {
             ATTR_WASTE_COLLECTOR: self.waste_collector,
             ATTR_LAST_UPDATE: self._last_update,
-            ATTR_HIDDEN: self._hidden
+            ATTR_HIDDEN: self._hidden,
+            ATTR_DAYS_UNTIL: self.days_until
         }
 
     @property
@@ -198,19 +201,19 @@ class WasteSensor(Entity):
                     collection_date = self.get_next_collection(today, waste_data, self.type)
                     if collection_date:
                         self._last_update = today.strftime('%d-%m-%Y %H:%M')
-                        date_diff = (collection_date - today).days + 1
+                        self.days_until = (collection_date - today).days + 1
                         self._hidden = False
                         if self.date_only:
-                            if date_diff >= 0:
+                            if self.days_until >= 0:
                                 self._state = collection_date.strftime(self.date_format)
                         else:
-                            if date_diff >= 8:
+                            if self.days_until >= 8:
                                 self._state = collection_date.strftime(self.date_format)
-                            elif date_diff > 1:
+                            elif self.days_until > 1:
                                 self._state = collection_date.strftime('%A, ' + self.date_format)
-                            elif date_diff == 1:
+                            elif self.days_until == 1:
                                 self._state = collection_date.strftime('Tomorrow, ' + self.date_format)
-                            elif date_diff == 0:
+                            elif self.days_until == 0:
                                 self._state = collection_date.strftime('Today, ' + self.date_format)
                             else:
                                 self._state = None
@@ -218,12 +221,15 @@ class WasteSensor(Entity):
                     else:
                         self._state = None
                         self._hidden = True
+                        self.days_until = None
                 else:
                     self._state = None
                     self._hidden = True
+                    self.days_until = None
         except ValueError:
             self._state = None
             self._hidden = True
+            self.days_until = None
 
     @staticmethod
     def get_next_collection(today, waste_dict, fraction):
