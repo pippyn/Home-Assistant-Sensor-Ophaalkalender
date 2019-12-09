@@ -1,7 +1,7 @@
 """
 Sensor component for waste pickup dates from belgium waste collectors
 Original Author: Pippijn Stortelder
-Current Version: 1.1.3 20191118 - Pippijn Stortelder
+Current Version: 1.1.4 20191209 - Pippijn Stortelder
 20190207 - Changed Groenafval to GFT
 20190218 - Fixed typo
 20190223 - Fix for HA 88
@@ -9,6 +9,7 @@ Current Version: 1.1.3 20191118 - Pippijn Stortelder
 20190612 - Fixed HACS
 20180822 - Fixed version numbering
 20191118 - Include categories 'gemengde plastics' & 'pmd'
+20191209 - Added attr days_until
 """
 
 import logging
@@ -23,7 +24,7 @@ from homeassistant.const import (CONF_RESOURCES)
 from homeassistant.util import Throttle
 from homeassistant.helpers.entity import Entity
 
-__version__ = '1.1.2'
+__version__ = '1.1.4'
 
 _LOGGER = logging.getLogger(__name__)
 
