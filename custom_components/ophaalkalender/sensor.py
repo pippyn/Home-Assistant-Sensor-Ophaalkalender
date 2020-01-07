@@ -235,6 +235,7 @@ class WasteSensor(Entity):
     @staticmethod
     def get_next_collection(today, waste_dict, fraction):
         next_collection_date = None
+        waste_dict[fraction].sort()
         for collection_date in waste_dict[fraction]:
             if collection_date >= today.replace(hour=0, minute=0, second=0, microsecond=0):
                 next_collection_date = collection_date
