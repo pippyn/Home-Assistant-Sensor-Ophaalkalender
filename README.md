@@ -22,7 +22,7 @@ Example config:
       streetnumber: ?
 ```
 
-### Recourses
+### Resources
 ```
 resources:
 ```
