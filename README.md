@@ -13,7 +13,7 @@ Example config:
     - platform: ophaalkalender
       resources:
         - restafval
-        - tuinafval
+        - gft
         - papier
         - pmd
         - grofafval
@@ -29,7 +29,7 @@ resources:
 This is a list of fractions you want a sensor for. At least one option is required.
 Resources options:
   - restafval
-  - tuinafval
+  - gft
   - papier
   - pmd
   - grofafval
