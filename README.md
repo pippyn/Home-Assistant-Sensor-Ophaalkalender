@@ -1,3 +1,22 @@
+# DEPRECATED - This sensor is now integrated in [Afvalbeheer](https://github.com/pippyn/Home-Assistant-Sensor-Afvalbeheer)
+install the afvalbeheer sensor and change your config. Example:
+```yaml
+  sensor:
+    - platform: afvalbeheer
+      wastecollector: ophaalkalender
+      resources:
+        - restafval
+        - gft
+        - papier
+        - pmd
+        - grofafval
+      postcode: ?
+      streetname: ?
+      streetnumber: ?
+```
+
+Original Readme:
+
 ## Home Assisant sensor component for Afvalbeheer
 
 Provides Home Assistant sensors for multiple Dutch waste collectors using REST API.
